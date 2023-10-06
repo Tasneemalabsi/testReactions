@@ -1,0 +1,21 @@
+.custom-navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    
+  }
+  
+  .custom-navbar .navbar-brand img {
+    margin-top: -1px;
+  }
+  
+  .custom-navbar .nav-link {
+    color: #ffffff;
+    margin-left: 15px;
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #007BFF;
+  }
+  
