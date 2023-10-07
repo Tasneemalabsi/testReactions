@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Image from 'react-bootstrap/Image';
-import logoImage from './11.png';
+import logoImage from './12.png';
 
 import './navstyle.css'; 
 
