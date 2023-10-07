@@ -1,0 +1,47 @@
+
+#about-section {
+
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    height: 600px;
+}
+
+#about-img {
+
+    margin-left: 25px;
+    height: 500px
+}
+
+#about-content {
+
+     padding-top: 150px;
+     padding-right: 30px;
+     color: azure;
+     direction: ltr;
+}
+
+#about-word{
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+hr {
+    width: 80px;
+    
+}
+
+#about-content button {
+    padding: 7px;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: rgb(83, 81, 81);
+    color: azure;
+}
+
+#about-content button:hover {
+    background-color: rgb(131, 17, 17);
+}
