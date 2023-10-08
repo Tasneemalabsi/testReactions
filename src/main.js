@@ -72,7 +72,7 @@ function Main() {
           <p>Jordan , Amman , Airport Road P.O. Box 183334 </p>
          </div>
           
-
+        
         <form id="contact-form">
         <p>Contact US</p> 
          <hr id="hr-contact"/>
@@ -88,6 +88,7 @@ function Main() {
           <textarea cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
           <button src="" >Submit</button>
         </form>
+        
 
         
     </section>
