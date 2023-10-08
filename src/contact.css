@@ -1,0 +1,85 @@
+#contact {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    height: 600px;
+    margin-top: 100px;
+}
+
+#contact p {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+#contact-form label {
+
+    color: white;
+}
+
+#contact-form {
+    padding-right: 300px;
+} 
+
+#contact-form input {
+    width: 310px;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    border: 2px solid rgb(179, 24, 24);
+}
+
+#contact-form input:hover {
+    border: 2px solid rgb(211, 90, 90);
+}
+
+#hr-contact {
+    width: 130px;
+    color: white;
+    font-weight: bolder;
+}
+
+#contact-form textarea {
+    background-color: black;
+    border: 2px solid rgb(179, 24, 24);
+
+}
+
+#contact-form textarea:hover {
+    border: 2px solid rgb(211, 90, 90);
+}
+
+#contact-form button {
+    padding: 7px;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: rgb(83, 81, 81);
+    color: azure;
+    width: 100px;
+}
+
+#contact-form button:hover {
+    background-color: rgb(131, 17, 17);
+}
+
+#location {
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+#location img {
+    height: 500px;
+    width: 700px;
+    border: 3px solid rgb(131, 17, 17);
+}
+
+#location p {
+    font-size: small;
+    padding-left: 20px;
+    font-weight: lighter;
+    padding-top: 10px;
+}
