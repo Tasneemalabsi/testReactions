@@ -3,9 +3,14 @@ import './main.css';
 import Header from './header';
 import AboutImage from './about.png';
 import './about.css';
+import './contact.css';
+import { useEffect , useState } from 'react';
 
 function Main() {
   const videoRef = useRef(null);
+  const [mapUrl, setMapUrl] = useState(
+    'https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap'
+  );
 
   const handleVideoEnd = () => {
     // Restart the video when it ends
@@ -14,6 +19,11 @@ function Main() {
       videoRef.current.play();
     }
   };
+
+  useEffect(function() {
+    setMapUrl('https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap')
+  }, []);
+
 
   return (
     <>
@@ -53,6 +63,34 @@ function Main() {
         </div>
     </section>
 
+    {/* // contact us */}
+    <section id="contact">
+    
+          {/* pk.00c787dbb858e0b398fbb2f8efe16277 */}
+          <div id="location">
+          <img src={mapUrl} alt="Static Map" />
+          <p>Jordan , Amman , Airport Road P.O. Box 183334 </p>
+         </div>
+          
+
+        <form id="contact-form">
+        <p>Contact US</p> 
+         <hr id="hr-contact"/>
+          <label>Full Name: </label> <br />
+          <input type="text" placeholder='Enter your full name' required/> <br /><br />
+          <label>Email: </label> <br />
+          <input type="email" placeholder='Enter your email' required/> <br /><br />
+          <label>Mobile Number: </label> <br />
+          <input type="text" placeholder='Enter your mobile number' required/> <br /><br />
+          {/* <label>Subject: </label> <br />
+          <input type="text" placeholder='Enter the subject' required/> <br /><br /> */}
+          <label>Message:</label> <br />
+          <textarea cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
+          <button src="" >Submit</button>
+        </form>
+
+        
+    </section>
     </>
   );
 }
