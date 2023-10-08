@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import './main.css'; 
-import Header from './header';
 import AboutImage from './about.png';
 import './about.css';
 import './contact.css';
