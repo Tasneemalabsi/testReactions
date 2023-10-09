@@ -4,12 +4,15 @@ import AboutImage from './about.png';
 import './about.css';
 import './contact.css';
 import { useEffect , useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Main() {
   const videoRef = useRef(null);
   const [mapUrl, setMapUrl] = useState(
     'https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap'
   );
+  const form = useRef();
+
 
   const handleVideoEnd = () => {
     // Restart the video when it ends
@@ -23,6 +26,19 @@ function Main() {
     setMapUrl('https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap')
   }, []);
 
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_zajgd2p', 'template_vme268o', form.current, 'aP6jMuiuKmo651aic')
+      .then((result) => {
+          console.log(result.text);
+          console.log("msg sent successfuly");
+          e.target.reset()
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
 
   return (
     <>
@@ -71,23 +87,21 @@ function Main() {
          </div>
           
         
-        <form id="contact-form">
+        <form id="contact-form" ref={form} onSubmit={sendEmail}>
         <p>Contact US</p> 
          <hr id="hr-contact"/>
           <label>Full Name: </label> <br />
-          <input type="text" placeholder='Enter your full name' required/> <br /><br />
+          <input type="text" name="name" placeholder='Enter your full name' required/> <br /><br />
           <label>Email: </label> <br />
-          <input type="email" placeholder='Enter your email' required/> <br /><br />
+          <input type="email" name="email" placeholder='Enter your email' required/> <br /><br />
           <label>Mobile Number: </label> <br />
-          <input type="text" placeholder='Enter your mobile number' required/> <br /><br />
+          <input type="text" name="phone" placeholder='Enter your mobile number' required/> <br /><br />
           {/* <label>Subject: </label> <br />
           <input type="text" placeholder='Enter the subject' required/> <br /><br /> */}
           <label>Message:</label> <br />
-          <textarea cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
-          <button src="" >Submit</button>
+          <textarea name="message" cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
+          <button type="submit" value="Send">Submit</button>
         </form>
-        
-
         
     </section>
     </>
