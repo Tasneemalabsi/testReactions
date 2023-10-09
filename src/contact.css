@@ -45,6 +45,7 @@
     border: 1px solid rgb(179, 24, 24);
   padding: 2%;
   margin-bottom: 1%;
+  color: white;
 }
 
 #contact-form input:hover {
