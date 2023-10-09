@@ -36,16 +36,18 @@ function Header() {
 
   const panelStyle = {
     position: 'fixed',
-    top: 0,
-    right: showPanel ? 0 : '-250px',
+    top: 60,
+    right: showPanel ? 50 : '-250px',
     minWidth: '200px',
-    maxWidth: '80%',
+    maxWidth: '70%',
     height: '40%',
-    backgroundColor: '#f9f9f9',
+    background: '#161717',
+    color: " #ffffff",
     transition: 'right 0.3s ease-in-out',
     zIndex: 999,
     padding: '20px',
     boxSizing: 'border-box',
+    borderRadius: '10px',
   };
 
   return (

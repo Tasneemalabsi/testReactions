@@ -18,19 +18,21 @@
   .custom-navbar .nav-link:hover {
     color: rgb(131, 17, 17);
   }
-  
+  .content-style {
+    text-align: center;
+  }
   .user-image {
-    width: 50%;
+    width: 40%;
     height: 20%;
     border-radius: 55%;
     margin-bottom: 1%;
     margin-left: 120%; 
   }
-  .user-imag{
-    width: 50%;
+   .user-imag{
+    width: 35%;
     height: 20%;
     border-radius: 55%;
-    margin-bottom: 1%;
+    margin-bottom: 1%;  
   }
   
   /* Add the styles for username */
@@ -47,4 +49,5 @@
   .button-container {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
   }
