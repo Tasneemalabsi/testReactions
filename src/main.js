@@ -5,6 +5,8 @@ import './about.css';
 import './contact.css';
 import { useEffect , useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
+
 
 function Main() {
   const videoRef = useRef(null);
@@ -12,7 +14,7 @@ function Main() {
     'https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap'
   );
   const form = useRef();
-
+  const [isSuccessMessageVisible, setIsSuccessMessageVisible] = useState(false);
 
   const handleVideoEnd = () => {
     // Restart the video when it ends
@@ -35,10 +37,17 @@ function Main() {
           console.log(result.text);
           console.log("msg sent successfuly");
           e.target.reset()
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
+     // Show the success message for 5 seconds
+     setIsSuccessMessageVisible(true);
+     setTimeout(() => {
+       setIsSuccessMessageVisible(false);
+     }, 5000);
+   },
+   (error) => {
+     console.log(error.text);
+   }
+ );
+};
 
   return (
     <>
@@ -103,6 +112,12 @@ function Main() {
           <button type="submit" value="Send">Submit</button>
         </form>
         
+        {/* Success Message */}
+        {isSuccessMessageVisible && (
+          <div className="success-message">
+            Message sent successfully <BsFillCheckCircleFill size={20} color="green" />
+          </div>
+        )}
     </section>
     </>
   );

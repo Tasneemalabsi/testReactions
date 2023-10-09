@@ -108,3 +108,14 @@
     padding-top: 1%;
     
 }
+
+.success-message {
+
+    background-color: #161717;
+    color: #f0f0f0;
+    padding: 10px;
+    width: 40%;
+    height: 10%;
+    border-bottom: 3px solid rgb(131, 17, 17) ;
+    margin-left: 50px;
+}
