@@ -1,51 +1,97 @@
- 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Image from 'react-bootstrap/Image';
-import logoImage from './12.png'
-import './navstyle.css'; 
+import logoImage from './12.png';
+import './navstyle.css'; // Import the styles
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './Login';
 import LogoutButton from './logout';
 
-
-
-
 function Header() {
-  let {isAuthenticated, user} = useAuth0()
+  const { isAuthenticated, user } = useAuth0();
+  const [showPanel, setShowPanel] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (showPanel) {
+        const panel = document.getElementById('side-panel');
+        if (panel && !panel.contains(event.target)) {
+          setShowPanel(false);
+        }
+      }
+    };
+
+    window.addEventListener('click', handleOutsideClick);
+    return () => {
+      window.removeEventListener('click', handleOutsideClick);
+    };
+  }, [showPanel]);
+
+  const handleImageClick = (e) => {
+    e.stopPropagation();
+    setShowPanel(!showPanel);
+  };
+
+  const panelStyle = {
+    position: 'fixed',
+    top: 0,
+    right: showPanel ? 0 : '-250px',
+    minWidth: '200px',
+    maxWidth: '80%',
+    height: '40%',
+    backgroundColor: '#f9f9f9',
+    transition: 'right 0.3s ease-in-out',
+    zIndex: 999,
+    padding: '20px',
+    boxSizing: 'border-box',
+  };
 
   return (
-    <Navbar expand="lg" className="custom-navbar">
-      <Container>
-  
-      <Navbar.Brand className="mx-auto" href="#home">
-  <Image src={logoImage} alt="Logo" height="40" loading="lazy" />
-</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about-section">About Us</Nav.Link>
-            <Nav.Link href="#contact">Contact Us</Nav.Link>
-            <Nav.Link href="#car">Car</Nav.Link>
-            <Nav.Link href="#motor">Motor</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+    <>
+      <Navbar expand="lg" className="custom-navbar">
+        <Container>
+          <Navbar.Brand className="mx-auto" href="#home">
+            <Image src={logoImage} alt="Logo" height="40" loading="lazy" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#about-section">About Us</Nav.Link>
+              <Nav.Link href="#contact">Contact Us</Nav.Link>
+              <Nav.Link href="#car">Car</Nav.Link>
+              <Nav.Link href="#motor">Motor</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+          {isAuthenticated ? (
+            <div onClick={handleImageClick}>
+              <img
+                src={user.picture}
+                className="user-image"  
+                alt="User Profile"
+              />
+            </div>
+          ) : (
+            <LoginButton />
+          )}
+        </Container>
+      </Navbar>
 
-        {isAuthenticated ? 
-        <>
-        <LogoutButton />
-    
-        <img src={user.picture} style={{width: "50px", height: "50px", borderRadius: "50%", border: "1px solid #cddc39 ",filter: "drop-shadow (0 0 8px #ff5722)"}} />
-        
-        </>
-        : 
-        <LoginButton />}
-
-      </Container>
-    </Navbar>
+      {showPanel && (
+        <div id="side-panel" style={panelStyle} onClick={(e) => e.stopPropagation()}>
+          <div className="content-style">  {/* Use the content style */}
+            <img src={user.picture} className="user-imag" alt="User Profile" />
+            <div className="username">{user.name}</div>  {/* Use the username style */}
+            <div className="email">{user.email}</div>  {/* Use the email style */}
+            <div className="button-container">  {/* Use the button container style */}
+              <LogoutButton />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

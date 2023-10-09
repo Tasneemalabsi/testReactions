@@ -19,3 +19,32 @@
     color: rgb(131, 17, 17);
   }
   
+  .user-image {
+    width: 50%;
+    height: 20%;
+    border-radius: 55%;
+    margin-bottom: 1%;
+    margin-left: 120%; 
+  }
+  .user-imag{
+    width: 50%;
+    height: 20%;
+    border-radius: 55%;
+    margin-bottom: 1%;
+  }
+  
+  /* Add the styles for username */
+  .username {
+    margin-bottom: 5px;
+  }
+  
+  /* Add the styles for email */
+  .email {
+    margin-bottom: 20px;
+  }
+  
+  /* Add the styles for the button container */
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
