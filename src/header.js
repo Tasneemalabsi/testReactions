@@ -20,17 +20,17 @@ function Header() {
     <Navbar expand="lg" className="custom-navbar">
       <Container>
   
+      <Navbar.Brand className="mx-auto" href="#home">
+  <Image src={logoImage} alt="Logo" height="40" loading="lazy" />
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/"><b>Home</b></Nav.Link>
-            <Nav.Link href="#about"><b>About Us</b></Nav.Link>
-            <br/>
-            <Navbar.Brand className="mx-auto" href="/">
-  <Image src={logoImage} alt="Logo" height="60" loading="lazy" />
-</Navbar.Brand>
-            <Nav.Link href="#contact"><b>Contact Us</b></Nav.Link>
-            <Nav.Link href="#car"><b>Car</b></Nav.Link>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#about-section">About Us</Nav.Link>
+            <Nav.Link href="#contact">Contact Us</Nav.Link>
+            <Nav.Link href="#car">Car</Nav.Link>
+            <Nav.Link href="#motor">Motor</Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
