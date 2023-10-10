@@ -57,7 +57,7 @@
   border-radius: 50%;
 }
 
-.footer-icons i:hover {
+.footer-icons a:hover {
   background: rgb(179, 24,24);;
   color: #fff;
   transition: 0.6s;

@@ -110,14 +110,16 @@ function Main() {
           <label>Message:</label> <br />
           <textarea name="message" cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
           <button type="submit" value="Send">Submit</button>
-        </form>
-        
-        {/* Success Message */}
+
+            {/* Success Message */}
         {isSuccessMessageVisible && (
           <div className="success-message">
             Message sent successfully <BsFillCheckCircleFill size={20} color="green" />
           </div>
         )}
+        </form>
+        
+      
     </section>
     </>
   );
