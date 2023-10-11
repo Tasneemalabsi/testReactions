@@ -53,7 +53,7 @@ const Footer = () => {
               <h3><span>Our</span> Partners</h3>
               <div className="footer-widget-content">
                 <div className="images-gallery">
-                  <ul>
+                  <ul   class="partner-list">
                     <li>
                       <a href="https://www.bmw.com/en/index.html">
                         <img
