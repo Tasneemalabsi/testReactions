@@ -3,14 +3,14 @@
       "id": 1,
       "type": "car",
       "make": "Toyota",
-      "model": "Corolla",
+      "model": "C-HR I",
       "year": 2021,
-      "color": "Silver",
+      "color": "Orange",
       "price": 25000,
       "fuelType": "Petrol",
       "transmission": "Automatic",
       "description": "The Toyota Corolla is a compact car that offers efficiency and reliability. It's known for its fuel efficiency and comfortable ride.",
-      "image": "https://www.auto-data.net/images/f127/Toyota-Corolla-Cross.jpg"
+      "image": "https://www.auto-data.net/images/f35/Toyota-C-HR-facelift-2020.jpg"
     },
     {
         "id": 2,
@@ -21,6 +21,7 @@
         "color": "Green",
         "price": 8000,
         "fuelType": "Petrol",
+        "transmission": "sequential gearbox",
         "description": "The Kawasaki Ninja 400 is a popular sports motorcycle, ideal for those seeking speed and agility.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Kawasaki_Ninja_400_KRT_SlantView_resized.jpg/800px-Kawasaki_Ninja_400_KRT_SlantView_resized.jpg"
       },
@@ -33,6 +34,7 @@
         "color": "Blue",
         "price": 16000,
         "fuelType": "Petrol",
+        "transmission": "sequential gearbox",
         "description": "The Yamaha YZF-R1 is a high-performance sports bike, designed for the ultimate racing experience.",
         "image": "https://www.motorcyclistonline.com/resizer/jSyFDBGAMfzcSZppw0DEbCn1kmw=/arc-photo-octane/arc3-prod/public/7NLMBSZVMFC5THVNAB4QASNF2Y.jpg"
       },
@@ -84,6 +86,7 @@
         "color": "Black & White",
         "price": 8000,
         "fuelType": "Petrol",
+        "transmission": "sequential gearbox",
         "description": "The Kawasaki Vulcan S is a cruiser motorcycle known for its adjustable ergonomics and smooth performance. It offers a comfortable and customizable riding experience.",
         "image": "https://i.ebayimg.com/images/g/C4kAAOSwkwxeEtPI/s-l1600.jpg"
       },
@@ -110,6 +113,7 @@
         "color": "Blue",
         "price": 13000,
         "fuelType": "Petrol",
+        "transmission": "sequential gearbox",
         "description": "The Suzuki GSX-R750 is a high-performance sportbike known for its power, agility, and race-inspired design. It offers an exciting riding experience.",
         "image": "https://cdn-fastly.motorcycle.com/media/2023/03/30/11414899/suzuki-motorcycles.jpg?size=720x845&nocrop=1"
       },
@@ -204,6 +208,7 @@
             "color": "Black",
             "price": 12000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Harley-Davidson Sportster Iron 883 is a powerful cruiser motorcycle known for its iconic style and performance.",
             "image": "https://gumlet.assettype.com/evoindia%2F2022-08%2F26161baa-9c42-414b-a8f7-f7af5065bf38%2FKWP_5365_2.jpg?format=auto"
           },
@@ -217,6 +222,7 @@
             "color": "green",
             "price": 11000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Honda CBR600RR is a popular sportbike known for its balanced performance and precise handling. It's a favorite among riders.",
             "image": "https://mcn-images.bauersecure.com/wp-images/195698/1440x960/honda-cl500-01.jpg?mode=max&quality=90&scale=down"
           },
@@ -255,6 +261,7 @@
             "color": "Red",
             "price": 14000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Ducati Monster 821 is a naked sportbike known for its distinctive design and lively performance. It's a blend of style and power.",
             "image": "https://cdn.luxatic.com/wp-content/uploads/2022/02/2008-Ducati-1198S.jpg"
           },
@@ -267,6 +274,7 @@
             "color": "Yellow",
             "price": 18000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The BMW S1000RR is a high-performance sportbike with cutting-edge technology and exceptional power. It's designed for speed enthusiasts.",
             "image": "https://www.roadracingworld.com/wp-content/uploads/2022/05/P90462711-BMW-M-1000-RR-50-Years-M_1652910466.jpg"
           },
@@ -279,6 +287,7 @@
             "color": "Red",
             "price": 12500,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Triumph Street Triple RS is a versatile sportbike known for its agility, power, and refined design. It's suitable for both daily commuting and spirited rides.",
             "image": "https://images.livemint.com/img/2019/11/26/1600x900/Rocket1_1574743442154.jpg"
           },
@@ -291,6 +300,7 @@
             "color": "Orange",
             "price": 9000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The KTM Duke 390 is a compact and powerful naked bike known for its aggressive styling and impressive performance. It's perfect for city rides and beyond.",
             "image": "https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3RtJTIwYmlrZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
           },
@@ -303,6 +313,7 @@
             "color": "Black",
             "price": 23000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Harley-Davidson Road Glide is a touring motorcycle built for long-distance comfort and style. It's equipped with modern features for a smooth ride.",
             "image": "https://i.pinimg.com/564x/9e/a1/dc/9ea1dc5f3c495b26fc587c3632d99c28.jpg"
           },
@@ -315,6 +326,7 @@
             "color": "Red",
             "price": 10500,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Indian Scout Sixty is a cruiser motorcycle known for its classic design and a smooth, comfortable ride. It offers a blend of style and performance.",
             "image": "https://www.cyclenews.com/wp-content/uploads/2015/11/2016-Scout-Sixty-1-crop.jpg"
           },
@@ -327,6 +339,7 @@
             "color": "Red",
             "price": 25000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Ducati Panigale V4 is a high-performance sportbike designed for track enthusiasts and speed lovers.",
             "image": "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/D4/37/D4371728-31D6-4ADB-BDD1-C33A54C91879.jpg"
           },
@@ -352,6 +365,7 @@
             "color": "Black",
             "price": 12000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Yamaha MT-09 is a versatile naked sportbike known for its thrilling performance and agile handling. It's a favorite among riders seeking excitement.",
             "image": "https://mcn-images.bauersecure.com/wp-images/4218/1440x960/amt09-sr-static.jpg?mode=max&quality=90&scale=down"
           },
@@ -377,6 +391,7 @@
             "color": "Black",
             "price": 9000,
             "fuelType": "Petrol",
+            "transmission": "sequential gearbox",
             "description": "The Suzuki V-Strom 650 is an adventure touring motorcycle known for its comfort, versatility, and capability to tackle various terrains. It's an ideal companion for long rides.",
             "image": "https://ridermagazine.com/wp-content/uploads/2017/09/VStrom-650-beauty.jpg"
           }
