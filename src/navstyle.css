@@ -7,7 +7,8 @@
   }
   
   .custom-navbar .navbar-brand img {
-    margin-top: -1px;
+    margin-top: -3px;
+    margin-left: 100px;
   }
   
   .custom-navbar .nav-link {
@@ -52,3 +53,7 @@
     padding-top: 10px;
   }
   
+  .ml-auto{
+  margin-left: 100px;
+  
+  }

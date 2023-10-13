@@ -58,3 +58,14 @@
   font-size: 2em;
   margin: 0;
 }
+
+#FormSearch{
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 4%;
+  
+}
+#FormSearch :hover{
+  border: rgba(179, 24,24)10px;
+}
