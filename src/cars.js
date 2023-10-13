@@ -1,7 +1,6 @@
 import CardComp from "./card";
 import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
 import './card.css';
 import data from './data.json';
 
@@ -49,6 +48,7 @@ function Cars(){
             color={item.color}
             price={item.price}
             transmission={item.transmission}
+            CartView={true}
             />
 
         )

@@ -2,7 +2,7 @@ import { useState} from  'react';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-
+import './button.css';
 
 
 function CardComp( props){
@@ -12,6 +12,29 @@ function CardComp( props){
      setShow(!show)
 
     }
+
+
+function saveToLocalStorage (){
+    if(localStorage.getItem("cart")){
+    let stringData = localStorage.getItem("cart")
+    let arr = JSON.parse(stringData);
+    arr.push(props)
+
+    // -----------------------------
+    let stringedData = JSON.stringify(arr)
+    localStorage.setItem("cart", stringedData)
+  }
+    else {
+      let arr = [];
+      arr.push(props)
+      let stringedData = JSON.stringify(arr)
+      localStorage.setItem("cart", stringedData)
+    }
+  }
+
+  
+
+
     return(
         <>
             <Card style={{ width: '18rem' , margin: '10px'  }}>
@@ -30,7 +53,24 @@ function CardComp( props){
               </Card.Text>
                 <Button variant="dark" onClick={handleShow}>Description</Button>{' '}
                 
-                <Button variant="danger">Danger</Button>{' '}
+                {props.CartView? <button onClick={saveToLocalStorage} className="button">
+          <img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" />
+        </button>
+                :<button onClick={saveToLocalStorage} style={{display:"none"}} ><img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" /> </button>
+              }
+
+
+          {props.CartView? <button onClick={props.handleDelete} style={{display:"none"}} className="button">
+          <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" />
+        </button>
+                :<button onClick={props.handleDelete} className="button"  ><img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" /> </button>
+              }
+
+
+
+
+              
+        
 
               </Card.Body>
             </Card>
