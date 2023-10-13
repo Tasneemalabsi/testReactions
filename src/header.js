@@ -64,7 +64,7 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#home"><b>Home</b></Nav.Link>
+              <Nav.Link href="/"><b>Home</b></Nav.Link>
               <Nav.Link href="#about-section"><b>About Us</b></Nav.Link>
               
               <Nav.Link href="#contact"><b>Contact Us</b></Nav.Link>
