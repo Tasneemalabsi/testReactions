@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image';
 import logoImage from './12.png';
 import './navstyle.css'; // Import the styles
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './Login';
 import LogoutButton from './logout';
+
+
+
 
 function Header() {
   const { isAuthenticated, user } = useAuth0();
@@ -51,7 +55,7 @@ function Header() {
   };
 
   return (
-    <>
+    <>  
       <Navbar expand="lg" className="custom-navbar">
         <Container>
           <Navbar.Brand className="mx-auto" href="#home">
@@ -60,13 +64,17 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about-section">About Us</Nav.Link>
-              <Nav.Link href="#contact">Contact Us</Nav.Link>
-              <Nav.Link href="#car">Car</Nav.Link>
-              <Nav.Link href="#motor">Motor</Nav.Link>
+              <Nav.Link href="#home"><b>Home</b></Nav.Link>
+              <Nav.Link href="#about-section"><b>About Us</b></Nav.Link>
+              
+              <Nav.Link href="#contact"><b>Contact Us</b></Nav.Link>
+              <Nav.Link href="/cars"><b>Car & Motorcycle</b></Nav.Link>
+
+           
+
             </Nav>
           </Navbar.Collapse>
+          
           {isAuthenticated ? (
             <div onClick={handleImageClick}>
               <img

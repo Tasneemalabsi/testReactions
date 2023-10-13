@@ -6,7 +6,8 @@ import './contact.css';
 import { useEffect , useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function Main() {
   const videoRef = useRef(null);
@@ -53,8 +54,20 @@ function Main() {
     <>
     {/* // video  */}
       <div className="main-container">
+      <Form className="d-flex"  id='FormSearch' >
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              name='search'
+            />
+ <Button variant="danger" type="submit">Search </Button> 
+        </Form>
+        
         <div className="video-container">
           <div className="video-foreground">
+        
             <video
               autoPlay
               muted
@@ -62,15 +75,17 @@ function Main() {
               onEnded={handleVideoEnd}
               ref={videoRef}
             >
+            
               <source src={require('./main_video.mp4')} type="video/mp4" />
+
+
+            
+          
             </video>
+        
           </div>
         </div>
-        <div className="content">
-          <h2>With more than 15 years of  </h2>
-          <h3>online Car Rental market experience</h3>
-          <h4>we guarantee value for money ! </h4>
-        </div>
+
       </div>
 
       {/* // about us */}
@@ -109,7 +124,7 @@ function Main() {
           <input type="text" placeholder='Enter the subject' required/> <br /><br /> */}
           <label>Message:</label> <br />
           <textarea name="message" cols="38" rows="4" placeholder="Enter the subject and your message"required></textarea> <br /><br />
-          <button type="submit" value="Send">Submit</button>
+          <button type="submit" value="Send" style={{borderRadius:'20px'}}>Submit</button>
 
             {/* Success Message */}
         {isSuccessMessageVisible && (

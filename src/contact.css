@@ -41,11 +41,12 @@
     border: none;
     height: 6%;
     border-radius: 1%;
-    background-color: black;
+    background-color: white;
     border: 1px solid rgb(179, 24, 24);
   padding: 2%;
   margin-bottom: 1%;
   color: white;
+  border-radius: 20px;
 }
 
 #contact-form input:hover {
@@ -54,12 +55,12 @@
 
 #hr-contact {
     width: 22%;
-    color: white;
+    color: black;
     font-weight: bolder;
 }
 
 #contact-form textarea {
-    background-color: black;
+    background-color: white;
     border: 1px solid rgb(179, 24, 24);
     height: 100px;
 
