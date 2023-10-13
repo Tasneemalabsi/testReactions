@@ -53,6 +53,7 @@ function Main() {
   return (
     <>
     {/* // video  */}
+    <>
       <div className="main-container">
       <Form className="d-flex"  id='FormSearch' >
             <Form.Control
@@ -65,6 +66,8 @@ function Main() {
  <Button variant="danger" type="submit">Search </Button> 
         </Form>
         
+       
+
         <div className="video-container">
           <div className="video-foreground">
         
@@ -136,6 +139,7 @@ function Main() {
         
       
     </section>
+    </>
     </>
   );
 }

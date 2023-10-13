@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image';
 import logoImage from './12.png';
 import './navstyle.css'; // Import the styles
@@ -65,12 +64,22 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Link href="/"><b>Home</b></Nav.Link>
-              <Nav.Link href="#about-section"><b>About Us</b></Nav.Link>
-              
-              <Nav.Link href="#contact"><b>Contact Us</b></Nav.Link>
+              <Nav.Link href="/#about-section"><b>About Us</b></Nav.Link>
+              <Nav.Link href="/#contact"><b>Contact Us</b></Nav.Link>
               <Nav.Link href="/cars"><b>Car & Motorcycle</b></Nav.Link>
+              {isAuthenticated && (
+                <Nav.Link href="/cart">
+                  <b className="cart-link">
+                    <img
+                      src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png"
+                      alt="Cart"
+                      className="cart-link"
+                    />
+                    
+                  </b>
+                </Nav.Link>
 
-           
+)}
 
             </Nav>
           </Navbar.Collapse>
