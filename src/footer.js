@@ -27,17 +27,19 @@ const Footer = () => {
                             <h5>Quick Links</h5>
                             <ul>
                                 <li className="nav-item">
-                                    <a className="" href="#about-section">About Us</a>
+                                    <a className="" href="/#about-section">About Us</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="" href="#contact">Contact Us</a>
+                                    <a className="" href="/#contact">Contact Us</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="" href="#car">Cars</a>
+                                    <a className="" href="/cars">Car & Motorcycle</a>
                                 </li>
                                
                                 <li className="nav-item">
-                                    <a className="" href="#motor">Motors</a>
+                                 <a className="cartt" href="/cart">
+                                 <img src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png" alt="Cart Icon" />
+                                 </a>
                                 </li>
                              
                             </ul>
