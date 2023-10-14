@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import CardComp from "./card";
 import EmptyCart from './Emptycart.png';
@@ -100,6 +101,7 @@ function Cart() {
             </>
           );
         })
+
         ) : (
           // <h1>Empty Cart!</h1>
           <img id="empty-cart" src={EmptyCart} alt="Logo" />

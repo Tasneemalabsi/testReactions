@@ -7,6 +7,8 @@ import './button.css';
 
 function CardComp(props) {
   let [show, setShow] = useState(false);
+  const [message, setMessage] = useState('');
+
 
   function handleShow() {
     setShow(!show)
@@ -30,7 +32,15 @@ function CardComp(props) {
       let stringedData = JSON.stringify(arr)
       localStorage.setItem("cart", stringedData)
     }
-  }
+  
+
+
+  setMessage('Item added to the cart!');
+  setTimeout(() => {
+    setMessage('');
+  }, 3000); // Clear the message after 3 seconds
+}
+  
 
 
 
@@ -51,6 +61,53 @@ function CardComp(props) {
             </Card.Text>
 
           </Card.Text>
+
+          
+              </Card.Text>
+                <Button variant="dark" onClick={handleShow}>Description</Button>{' '}
+                
+                {props.CartView? <button onClick={saveToLocalStorage} className="button">
+          <img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" />
+        </button>
+                :<button onClick={saveToLocalStorage} style={{display:"none"}} ><img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" /> </button>
+              }
+
+
+          {props.CartView? <button onClick={props.handleDelete} style={{display:"none"}} className="button">
+          <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" />
+        </button>
+                :<button onClick={props.handleDelete} className="button"  ><img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" /> </button>
+              }
+
+
+
+
+              
+        
+
+              </Card.Body>
+              {message && <p style={{backgroundColor:'black', color:'white', border:' rgba(179, 24,24) solid 1px'}}>{message}</p>}
+            </Card>
+          
+             <Modal show={show} onHide={handleShow}  dialogClassName="modal-left">
+             <Modal.Header closeButton>
+               <Modal.Title>{props.model}</Modal.Title>
+             </Modal.Header>
+             <Modal.Body>  {props.description}</Modal.Body>
+             <Modal.Footer>
+               <Button variant="secondary" onClick={handleShow}>
+                 Close
+               </Button>
+             
+             </Modal.Footer>
+           </Modal>
+        </>
+        );
+            }
+          
+      
+ 
+
           <Button variant="dark" onClick={handleShow}>Description</Button>{' '}
 
           {props.CartView ? <button onClick={saveToLocalStorage} className="button">
