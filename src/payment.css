@@ -1,0 +1,66 @@
+#checkout-section {
+
+    border: 1px solid rgb(156, 150, 150);
+    margin-left: 5%;
+    width: 90%;
+    padding: 20px 10px;
+    font-size: 22px;
+    margin-top: 2%;
+    display: 'flex';
+    justify-content: 'space-between';
+    align-items: 'center';
+    width: '100%';
+}
+
+#checkout-section input {
+
+    border: none;
+}
+
+#checkout-section label {
+
+    font-weight: bold;
+
+}
+
+#checkout-section button {
+
+    width: 20%;
+    border: none;
+    background-color: rgb(38, 138, 38);
+    color: white;
+    /* margin-top: 7%; */
+    padding: 7px;
+    margin-left: 77%;
+}
+
+#checkout-section button:hover {
+    background-color: rgb(30, 156, 30);
+}
+
+#payment-popup label {
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#payment-popup input {
+
+    width: 100%;
+    border: 1px solid rgb(156, 150, 150);
+}
+
+#total-price-popup label {
+
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#total-price-popup input {
+
+    border: none;
+}
+#payment-hr {
+
+    width: 100%;
+}
