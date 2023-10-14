@@ -10,11 +10,26 @@ import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 function Main() {
   const videoRef = useRef(null);
-  const [mapUrl, setMapUrl] = useState(
-    'https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap'
-  );
+  const [mapUrl, setMapUrl] = useState('');
   const form = useRef();
   const [isSuccessMessageVisible, setIsSuccessMessageVisible] = useState(false);
+
+  useEffect(() => {
+    let fetchAPI = async () => {
+      let url =
+        'https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=31.963158,35.930359&zoom=13&format=jpg';
+      try {
+        let response = await fetch(url);
+        let blob = await response.blob();
+        let mapImageUrl = URL.createObjectURL(blob);
+        setMapUrl(mapImageUrl);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchAPI();
+  }, []);
 
   const handleVideoEnd = () => {
     // Restart the video when it ends
@@ -24,9 +39,9 @@ function Main() {
     }
   };
 
-  useEffect(function() {
-    setMapUrl('https://maps.locationiq.com/v3/staticmap?key=pk.00c787dbb858e0b398fbb2f8efe16277&center=40.7128,-74.0060&zoom=16&size=600x400&format=png&maptype=roadmap')
-  }, []);
+  // useEffect(function() {
+  //   setMapUrl('https://tiles.locationiq.com/v3/streets/vector.json?key=pk.00c787dbb858e0b398fbb2f8efe16277')
+  // }, []);
 
 
   const sendEmail = (e) => {
@@ -89,7 +104,7 @@ function Main() {
     
           {/* pk.00c787dbb858e0b398fbb2f8efe16277 */}
           <div id="location">
-          <img src={mapUrl} alt="Static Map" />
+          <img src={mapUrl} alt="dynamic Map" />
           <p>Jordan , Amman , Airport Road P.O. Box 183334 </p>
          </div>
           
