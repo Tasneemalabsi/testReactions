@@ -6,8 +6,7 @@ import './contact.css';
 import { useEffect , useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
 
 function Main() {
   const videoRef = useRef(null);
@@ -55,19 +54,6 @@ function Main() {
     {/* // video  */}
     <>
       <div className="main-container">
-      <Form className="d-flex"  id='FormSearch' >
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              name='search'
-            />
- <Button variant="danger" type="submit">Search </Button> 
-        </Form>
-        
-       
-
         <div className="video-container">
           <div className="video-foreground">
         
@@ -78,18 +64,12 @@ function Main() {
               onEnded={handleVideoEnd}
               ref={videoRef}
             >
-            
               <source src={require('./main_video.mp4')} type="video/mp4" />
-
-
-            
-          
             </video>
-        
           </div>
         </div>
-
       </div>
+      
 
       {/* // about us */}
       <section id="about-section" class="about-section">
