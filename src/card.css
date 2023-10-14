@@ -2,11 +2,11 @@
   
 
 #contantCar{
-    display:grid ;
- flex-wrap: flexWrap ;
-  justify-content: space-between ;
-   gap: 12px ;
-   margin-top:3% ;
+   display:grid ;
+flex-wrap: flexWrap ;
+ justify-content: space-between ;
+  gap: 12px ;
+  margin-top:3% ;
 grid-template-columns: repeat(auto-fill,minmax(280px, 1fr));
 }
 
@@ -14,43 +14,40 @@ grid-template-columns: repeat(auto-fill,minmax(280px, 1fr));
 
 
 #select-Products{
-    width: 800px;
-    align-content: center ;
-    margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 1%;
-    
-    border: rgba(179, 24,24)solid 1px;
+   width: 800px;
+   align-content: center ;
+   margin-top: 2%;
+   margin-left: 20%;
+   margin-right: 20%;
+   margin-bottom: 1%;
    
-    height: 40px;
-    border-radius: 50px;
-     font-family:'Times New Roman', Times, serif;
-     font-style: italic;
+   border: rgba(179, 24,24)solid 1px;
+  
+   height: 40px;
+   border-radius: 50px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
 padding-left:  20px;
 
-  
+ 
 
 }
- 
- #select-Products:hover {
-    border: rgba(179, 24,24) solid 1px;
+
+#select-Products:hover {
+   border: rgba(179, 24,24) solid 1px;
+}
+
+
+
+.modal-left  {
+
+   left:auto;
+   right: 400px;
+
  }
 
- 
- 
- .modal-left  {
- 
-    left:auto;
-    right: 400px;
- 
-  }
-
-
-  #empty-cart {
-   
-   margin-left: 40%;
-   margin-top: 5%;
-  }
-
- 
+ #empty-cart {
+  
+  margin-left: 40%;
+  margin-top: 5%;
+ }

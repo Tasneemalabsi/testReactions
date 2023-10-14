@@ -7,7 +7,7 @@ import './button.css';
 
 function CardComp(props) {
   let [show, setShow] = useState(false);
-
+  const [message, setMessage] = useState('');
   function handleShow() {
     setShow(!show)
 
@@ -30,8 +30,12 @@ function CardComp(props) {
       let stringedData = JSON.stringify(arr)
       localStorage.setItem("cart", stringedData)
     }
-  }
-
+  
+  setMessage('Item added to the cart!');
+  setTimeout(() => {
+    setMessage('');
+  }, 3000); // Clear the message after 3 seconds
+}
 
 
 
@@ -66,6 +70,7 @@ function CardComp(props) {
             : <button onClick={props.handleDelete} className="button"  ><img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" /> </button>
           }
         </Card.Body>
+        {message && <p style={{backgroundColor:'black', color:'white', border:' rgba(179, 24,24) solid 1px'}}>{message}</p>}
       </Card>
 
 
@@ -81,7 +86,7 @@ function CardComp(props) {
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
 
