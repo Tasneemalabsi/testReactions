@@ -1,0 +1,68 @@
+.custom-navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    
+  }
+  
+  .custom-navbar .navbar-brand img {
+    margin-top: -3px;
+    margin-left: 100px;
+  }
+  
+  .custom-navbar .nav-link {
+    color: #ffffff;
+    margin-left: 15px;
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: rgb(179, 24,24);;
+  }
+  .content-style {
+    text-align: center;
+  }
+  .user-image {
+    width: 40%;
+    height: 20%;
+    border-radius: 55%;
+    margin-bottom: 1%;
+    margin-left: 120%; 
+  }
+   .user-imag{
+    width: 35%;
+    height: 20%;
+    border-radius: 55%;
+    margin-bottom: 1%;  
+  }
+  
+  /* Add the styles for username */
+  .username {
+    margin-bottom: 5px;
+  }
+  
+  /* Add the styles for email */
+  .email {
+    margin-bottom: 20px;
+  }
+  
+  /* Add the styles for the button container */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  
+  .ml-auto{
+  margin-left: 100px;
+  
+  }
+
+  .cart-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px; 
+    height: 24px; 
+    
+  }

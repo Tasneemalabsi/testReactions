@@ -1,0 +1,138 @@
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    background-color: #f0f0f0;
+  }
+
+#contact {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    height: 600px;
+    margin-top: 100px;
+}
+
+#contact p {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+#contact-form label {
+    display: block;
+  margin-bottom: -26px;
+  font-weight: bold;
+    color: white;
+}
+
+#contact-form {
+    padding-right: 5%;
+    text-align: left;
+    max-width: 50%;
+    width: 100%;
+} 
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    border: none;
+    height: 6%;
+    border-radius: 1%;
+    background-color: white;
+    border: 1px solid rgb(179, 24, 24);
+  padding: 2%;
+  margin-bottom: 1%;
+  
+  border-radius: 20px;
+}
+
+#contact-form input:hover {
+    border: 1px solid rgb(179, 24, 24);
+}
+
+#hr-contact {
+    width: 22%;
+    color: black;
+    font-weight: bolder;
+}
+
+#contact-form textarea {
+    background-color: white;
+    border: 1px solid rgb(179, 24, 24);
+    height: 100px;
+
+}
+
+#contact-form textarea:hover {
+    border: 1px solid rgb(211, 90, 90);
+}
+
+#contact-form button {
+    padding: 2% 3%;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: rgb(83, 81, 81);
+    color: azure;
+    width: 20%;
+    color: #fff;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: rgb(131, 17, 17);
+    opacity: 0.8;
+}
+
+#location {
+    padding-top: 3%;
+    padding-left: 2%;
+    text-align: center;
+    
+}
+
+#location img {
+    height: 90%;
+    width: 90%;
+    border: 2px solid rgb(131, 17, 17);
+    max-width: 100%;
+}
+
+#location p {
+    font-size: small;
+    padding-left: 1%;
+    font-weight: lighter;
+    padding-top: 1%;
+    
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container button {
+    padding: 2% 3%;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: rgb(83, 81, 81);
+    color: azure;
+    width: 20%;
+    color: #fff;
+    font-size: 100%;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin to separate the button and the success message */
+  }
+  
+  .success-message {
+    background-color: #161717;
+    color: #f0f0f0;
+    padding: 10px;
+    width: 40%; /* Adjust the width as needed */
+    border-bottom: 3px solid rgb(131, 17, 17);
+  }
