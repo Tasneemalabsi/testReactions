@@ -18,8 +18,8 @@ function Cart (){
 
     return(
         <>
-        <div style= {{display:"flex", gap:"20xp", marginTop:"3%"}}>
-    {cartState.length !==0 ?( cartState.map(function(item, index){
+        <div  id="contantCar">
+    {cartState && cartState.length !==0 ?( cartState.map(function(item, index){
             return(
               <>
          <CardComp

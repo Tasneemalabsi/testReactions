@@ -7,6 +7,8 @@ import './button.css';
 
 function CardComp( props){
   let [show, setShow] = useState(false);
+  const [message, setMessage] = useState('');
+
 
     function handleShow(){
      setShow(!show)
@@ -30,8 +32,13 @@ function saveToLocalStorage (){
       let stringedData = JSON.stringify(arr)
       localStorage.setItem("cart", stringedData)
     }
-  }
+  
 
+  setMessage('Item added to the cart!');
+  setTimeout(() => {
+    setMessage('');
+  }, 3000); // Clear the message after 3 seconds
+}
   
 
 
@@ -73,7 +80,9 @@ function saveToLocalStorage (){
         
 
               </Card.Body>
+              {message && <p style={{backgroundColor:'black', color:'white', border:' rgba(179, 24,24) solid 1px'}}>{message}</p>}
             </Card>
+          
              <Modal show={show} onHide={handleShow}  dialogClassName="modal-left">
              <Modal.Header closeButton>
                <Modal.Title>{props.model}</Modal.Title>
@@ -87,7 +96,9 @@ function saveToLocalStorage (){
              </Modal.Footer>
            </Modal>
         </>
-        )}
+        );
+            }
+          
       
  
 
