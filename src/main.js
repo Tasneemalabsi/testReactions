@@ -6,6 +6,8 @@ import './contact.css';
 import { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+
 
 
 function Main() {
@@ -87,7 +89,8 @@ function Main() {
                 <h1>Online With <span style={{ color: " #cc0000" }}>Speed</span></h1>
                 <p> a new easy and convenient way to buy your new car anytime and anywhere ! </p>
 
-                <button>Book your car online now</button>
+                <button >Book your car online now</button>
+              
               </div>
 
             </div>
@@ -104,7 +107,7 @@ function Main() {
             <p id="about-word">About Us</p>
             <hr />
             <p>Speed Car Rental is one of the largest car rental companies worldwide, available in the major airports in the world and operates more than 1,200 locations in more than 90 countries. Dollar Jordan one of the largest car rental offices in Jordan, we have in operations 2300 vehicles with all types and sizes, we do operate self-drive car rentals for short and long term also we do a leasing program and a chauffeur driven services. Our business mainly engaged in the business of the daily and yearly contracts for individuals, NGOs, embassies and US ARMY and German Army.</p>
-            <button src="">Rent Now</button>
+     <Link to="/cars">      <button src="">Book start Now</button></Link> 
           </div>
         </section>
 

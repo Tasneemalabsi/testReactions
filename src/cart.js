@@ -142,6 +142,7 @@ function Cart() {
                   value={cardNumber}
                   onChange={handleCardNumberChange}
                   placeholder="Enter your card number"
+                  required
                 /> 
               </div> 
               <div>
@@ -151,6 +152,7 @@ function Cart() {
                   value={expiryDate}
                   onChange={handleExpiryDateChange}
                   placeholder="MM/YY"
+                  required
                 />
               </div>
               <div>
@@ -160,6 +162,7 @@ function Cart() {
                   value={cvv}
                   onChange={handleCvvChange}
                   placeholder="Enter CVV"
+                  required
                 />
               </div> <br />
               <div id="total-price-popup">
@@ -168,15 +171,16 @@ function Cart() {
                   type="text"
                   value={totalPrice + " JD"}
                   readOnly
+                  
                 />
               </div>
             </form>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="primary" onClick={handlePayNow}>
+          <Button variant="success" onClick={handlePayNow}>
               Pay Now
             </Button>
-            <Button variant="secondary" onClick={() => { 
+            <Button variant="danger" onClick={() => { 
               handleShow(); 
               setCardNumber('');
               setExpiryDate('');
