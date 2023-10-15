@@ -1,5 +1,5 @@
 .custom-navbar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(179 ,24,24);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -17,7 +17,7 @@
   }
   
   .custom-navbar .nav-link:hover {
-    color: rgb(179, 24,24);;
+    color: black;
   }
   .content-style {
     text-align: center;
