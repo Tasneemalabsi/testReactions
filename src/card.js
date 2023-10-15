@@ -41,7 +41,7 @@ function CardComp(props) {
 
   return (
     <>
-      <Card style={{ width: '18rem', margin: '10px'  }}>
+      <Card id="cardd" style={{ width: '18rem', margin: '10px'  }}>
         <Card.Img variant="top" src={props.image} style={{ padding: '5px',height:'270px', }} />
         <Card.Body>
           <Card.Title>{props.model}</Card.Title>

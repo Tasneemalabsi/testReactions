@@ -107,7 +107,7 @@ function Main() {
             <p id="about-word">About Us</p>
             <hr />
             <p>Speed Car Rental is one of the largest car rental companies worldwide, available in the major airports in the world and operates more than 1,200 locations in more than 90 countries. Dollar Jordan one of the largest car rental offices in Jordan, we have in operations 2300 vehicles with all types and sizes, we do operate self-drive car rentals for short and long term also we do a leasing program and a chauffeur driven services. Our business mainly engaged in the business of the daily and yearly contracts for individuals, NGOs, embassies and US ARMY and German Army.</p>
-     <Link to="/cars">      <button src="">Book start Now</button></Link> 
+     <Link to="/cars">      <button src="">Book Now</button></Link> 
           </div>
         </section>
 
