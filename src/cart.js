@@ -6,8 +6,10 @@ import './payment.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
-
+import { useAuth0 } from "@auth0/auth0-react";
 function Cart() {
+  const { isAuthenticated, user } = useAuth0();
+  console.log(user)
   let stringedCart = localStorage.getItem("cart");
   let cart = JSON.parse(stringedCart);
   let [cartState, setCartState] = useState(cart)
@@ -32,6 +34,13 @@ function Cart() {
     let storeData = JSON.stringify(cartCopy);
     localStorage.setItem("cart", storeData);
   }
+  function filterByEmail() {
+    if (isAuthenticated) {
+      let filteredData = cartState.filter(function(item) {
+        return user.email === item.email})
+      setCartState(filteredData);
+    }
+  }
 
   let handleCardNumberChange = (e) => {
     setCardNumber(e.target.value);
@@ -46,11 +55,11 @@ function Cart() {
   };
 
 
-  useEffect(() => {
+  useEffect(function() {
     // Calculate the total price of items in the cart
     let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
     setTotalPrice(totalPrice);
-  }, [cartState]);
+    filterByEmail(); },[cartState]);
 
   const handlePayNow = () => {
     // Add any payment logic here
@@ -82,7 +91,7 @@ function Cart() {
   return (
     <>
       <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"space-between", gap:"20xp", marginTop:"3%"}}>
-        {cartState && cartState.length !== 0 ? (cartState.map(function (item, index) {
+        {isAuthenticated && cartState.length !== 0 ? (cartState.map(function (item, index) {
           return (
             <>
               <CardComp
@@ -96,7 +105,10 @@ function Cart() {
                 price={item.price}
                 transmission={item.transmission}
                 CartView={false} index={index}
-                handleDelete={() => { handleDelete(index) }} />
+                handleDelete={() => { handleDelete(index) }} 
+                key ={index}
+                email ={user.email}
+                showDelete={true} />
             </>
           );
         })
@@ -142,6 +154,7 @@ function Cart() {
                   value={cardNumber}
                   onChange={handleCardNumberChange}
                   placeholder="Enter your card number"
+                  required
                 /> 
               </div> 
               <div>
@@ -151,6 +164,7 @@ function Cart() {
                   value={expiryDate}
                   onChange={handleExpiryDateChange}
                   placeholder="MM/YY"
+                  required
                 />
               </div>
               <div>
@@ -160,6 +174,7 @@ function Cart() {
                   value={cvv}
                   onChange={handleCvvChange}
                   placeholder="Enter CVV"
+                  required
                 />
               </div> <br />
               <div id="total-price-popup">
@@ -168,15 +183,16 @@ function Cart() {
                   type="text"
                   value={totalPrice + " JD"}
                   readOnly
+                  
                 />
               </div>
             </form>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="primary" onClick={handlePayNow}>
+          <Button variant="success" onClick={handlePayNow}>
               Pay Now
             </Button>
-            <Button variant="secondary" onClick={() => { 
+            <Button variant="danger" onClick={() => { 
               handleShow(); 
               setCardNumber('');
               setExpiryDate('');

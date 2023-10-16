@@ -3,11 +3,13 @@ import './footer.css';
 import BMWImage from './BMW.jpg';
 import miniImage from './mini cooper.jpg';
 import mercImage from './merc.jpg';
-import audiImage from './audi.png'
+import audiImage from './audi.png';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 
 const Footer = () => {
+  const { isAuthenticated } = useAuth0();
     return (
         <>
             <div className="Footer">
@@ -35,18 +37,19 @@ const Footer = () => {
                                 <li className="nav-item">
                                     <a className="" href="/cars">Car & Motorcycle</a>
                                 </li>
-                               
+                                {isAuthenticated && (
                                 <li className="nav-item">
                                  <a className="cartt" href="/cart">
                                  <img src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png" alt="Cart Icon" />
                                  </a>
                                 </li>
+                                )}
                              
                             </ul>
                         </div>
                         <div className="col-md-6 col-lg-4 col-12 ft-3">
                             <h5>For questions about the Speed Cars Service please </h5>
-                            <p><i class="fa-solid fa-phone-volume"></i> +962 777272722</p>
+                            <p><i class="fa-solid fa-phone-volume"></i> +962 778712927</p>
                             <p><i class="fa-solid fa-envelope"></i> speed.car.website@gmail.com</p>
                             <p><i class="fa-solid fa-paper-plane"></i> Abbottabad, Pakistan.</p>
                         </div>
