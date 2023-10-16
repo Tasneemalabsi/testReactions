@@ -89,7 +89,8 @@ function Main() {
                 <h1>Online With <span style={{ color: " #cc0000" }}>Speed</span></h1>
                 <p> a new easy and convenient way to buy your new car anytime and anywhere ! </p>
 
-                <button >Book your car online now</button>
+               
+                  
               
               </div>
 
