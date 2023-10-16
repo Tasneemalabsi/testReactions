@@ -3,10 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import './button.css';
-
+import { useAuth0 } from '@auth0/auth0-react'; 
 
 function CardComp(props) {
   let [show, setShow] = useState(false);
+  let {isAuthenticated, user} = useAuth0()
+  console.log(user)
   const [message, setMessage] = useState('');
   function handleShow() {
     setShow(!show)
@@ -18,7 +20,7 @@ function CardComp(props) {
     if (localStorage.getItem("cart")) {
       let stringData = localStorage.getItem("cart")
       let arr = JSON.parse(stringData);
-      arr.push(props)
+      arr.push({...props, email:user.email})
 
       // -----------------------------
       let stringedData = JSON.stringify(arr)
@@ -26,7 +28,7 @@ function CardComp(props) {
     }
     else {
       let arr = [];
-      arr.push(props)
+      arr.push({...props, email:user.email})
       let stringedData = JSON.stringify(arr)
       localStorage.setItem("cart", stringedData)
     }
@@ -57,17 +59,17 @@ function CardComp(props) {
           </Card.Text>
           <Button variant="dark" onClick={handleShow}>Description</Button>{' '}
 
-          {props.CartView ? <button onClick={saveToLocalStorage} className="button">
+          
+          {isAuthenticated && props.CartView ? <button onClick={saveToLocalStorage} className="button">
             <img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" />
           </button>
             : <button onClick={saveToLocalStorage} style={{ display: "none" }} ><img src="https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png" alt="add icon" /> </button>
           }
 
-
-          {props.CartView ? <button onClick={props.handleDelete} style={{ display: "none" }} className="button">
+          {props.showDelete ? <button onClick={props.handleDelete} className="button">
             <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" />
           </button>
-            : <button onClick={props.handleDelete} className="button"  ><img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" /> </button>
+            : <button onClick={props.handleDelete}  style={{ display: "none" }} className="button"  ><img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="delete-button" /> </button>
           }
         </Card.Body>
         {message && <p style={{backgroundColor:'black', color:'white', border:' rgba(179, 24,24) solid 1px'}}>{message}</p>}
