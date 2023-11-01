@@ -90,7 +90,7 @@ function Cart() {
     setCheckoutItems(items);
   }, [cartState]);
 
-
+console.log("hello")
   return (
     <>
       <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"space-between", gap:"20xp", marginTop:"3%"}}>
