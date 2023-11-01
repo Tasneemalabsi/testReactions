@@ -57,12 +57,13 @@ function Cart() {
 
   useEffect(function() {
     // Calculate the total price of items in the cart
-    
+      if(!isLoading){
       let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
       setTotalPrice(totalPrice);
       filterByEmail(); 
+      }
     
-},[cartState]);
+},[isLoading]);
 
   const handlePayNow = () => {
     // Add any payment logic here
