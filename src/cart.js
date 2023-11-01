@@ -57,11 +57,11 @@ function Cart() {
 
   useEffect(function() {
     // Calculate the total price of items in the cart
-    if(!isLoading){
+    
       let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
       setTotalPrice(totalPrice);
       filterByEmail(); 
-    }
+    
 },[cartState]);
 
   const handlePayNow = () => {
@@ -94,7 +94,7 @@ function Cart() {
   return (
     <>
       <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"space-between", gap:"20xp", marginTop:"3%"}}>
-        {isAuthenticated && cartState && cartState.length !== 0 ? (cartState.map(function (item, index) {
+        {isAuthenticated && cartState && cartState?.length !== 0 ? (cartState.map(function (item, index) {
           return (
             <>
               <CardComp
