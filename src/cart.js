@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { useAuth0 } from "@auth0/auth0-react";
 function Cart() {
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user, isLoading } = useAuth0();
   console.log(user)
   let stringedCart = localStorage.getItem("cart");
   let cart = JSON.parse(stringedCart);
@@ -57,9 +57,12 @@ function Cart() {
 
   useEffect(function() {
     // Calculate the total price of items in the cart
-    let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
-    setTotalPrice(totalPrice);
-    filterByEmail(); },[cartState]);
+    if(!isLoading){
+      let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
+      setTotalPrice(totalPrice);
+      filterByEmail(); 
+    }
+},[cartState]);
 
   const handlePayNow = () => {
     // Add any payment logic here
