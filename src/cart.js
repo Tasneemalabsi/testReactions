@@ -12,7 +12,6 @@ function Cart() {
   console.log(user)
   let stringedCart = localStorage.getItem("cart");
   let cart = JSON.parse(stringedCart);
- console.log(cart.length)
   let [cartState, setCartState] = useState(cart)
   let [show, setShow] = useState(false);
   let [showSuccess, setShowSuccess] = useState(false);
