@@ -18,9 +18,7 @@ function Cart() {
   let [showSuccess, setShowSuccess] = useState(false);
   let [checkoutItems, setCheckoutItems] = useState([]);
 
-  if(cart){
-    setCartState(cart)
-  }
+
 
   function handleShow() {
     setShow(!show)
@@ -62,13 +60,17 @@ function Cart() {
 
   useEffect(function() {
     // Calculate the total price of items in the cart
+    if(cart){
+      setCartState(cart)
+    }
       if(!isLoading){
+
       let totalPrice = cartState.reduce((total, item) => total + item.price, 0);
       setTotalPrice(totalPrice);
       filterByEmail(); 
       }
     
-},[isLoading]);
+},[isLoading, cartState]);
 
   const handlePayNow = () => {
     // Add any payment logic here
