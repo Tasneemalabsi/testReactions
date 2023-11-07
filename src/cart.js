@@ -95,7 +95,7 @@ console.log("hello")
   return (
     <>
       <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"space-between", gap:"20xp", marginTop:"3%"}}>
-        {isAuthenticated && cartState!==null && cartState?.length !== 0 ? (cartState.map(function (item, index) {
+        {isAuthenticated && !isLoading && cartState !==null && cartState?.length !== 0 ? (cartState.map(function (item, index) {
           return (
             <>
               <CardComp
