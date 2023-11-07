@@ -12,10 +12,15 @@ function Cart() {
   console.log(user)
   let stringedCart = localStorage.getItem("cart");
   let cart = JSON.parse(stringedCart);
-  let [cartState, setCartState] = useState(cart)
+ 
+  let [cartState, setCartState] = useState([])
   let [show, setShow] = useState(false);
   let [showSuccess, setShowSuccess] = useState(false);
   let [checkoutItems, setCheckoutItems] = useState([]);
+
+  if(cart){
+    setCartState(cart)
+  }
 
   function handleShow() {
     setShow(!show)
